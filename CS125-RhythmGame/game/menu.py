@@ -322,7 +322,7 @@ def song_selection_menu():
 
     # Define button dimensions and gap
     song_button_width = 900 # Much wider button for song title
-    song_button_height = 200 # Adjusted height
+    song_button_height = 200 
     arrow_button_width = 80
     arrow_button_height = 50
     horizontal_gap = 50 # Gap between song button and arrow buttons
@@ -332,7 +332,7 @@ def song_selection_menu():
         image=None,
         pos=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2), # Centered vertically and horizontally
         text_input=f"{initial_song['title'].upper()}\n{initial_song['artist'].upper()}", # Combined title and artist
-        font_size=40, # Adjusted font size for larger button
+        font_size=40, 
         base_color=COLORS["WHITE"],
         hovering_color=COLORS["RED"],
         width=song_button_width,
@@ -419,7 +419,7 @@ def song_selection_menu():
                         image=None,
                         pos=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2), # Maintain centered position
                         text_input=f"{current_song['title'].upper()}\n{current_song.get('artist', 'Unknown Artist').upper()}",
-                        font_size=40, # Adjusted font size
+                        font_size=40, 
                         base_color=COLORS["WHITE"],
                         hovering_color=COLORS["RED"],
                         width=song_button_width,
@@ -434,7 +434,7 @@ def song_selection_menu():
                         image=None,
                         pos=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2), # Maintain centered position
                         text_input=f"{current_song['title'].upper()}\n{current_song.get('artist', 'Unknown Artist').upper()}",
-                        font_size=40, # Adjusted font size
+                        font_size=40, 
                         base_color=COLORS["WHITE"],
                         hovering_color=COLORS["RED"],
                         width=song_button_width,
@@ -472,8 +472,8 @@ def pattern_selection(selected_song):
             font_size=75,
             base_color=COLORS["WHITE"],
             hovering_color=COLORS["RED"],
-            width=350, # Fixed width
-            height=button_height # Fixed height
+            width=350, 
+            height=button_height 
         ),
         Button(
             image=None,
@@ -482,8 +482,8 @@ def pattern_selection(selected_song):
             font_size=75,
             base_color=COLORS["WHITE"],
             hovering_color=COLORS["RED"],
-            width=350, # Fixed width
-            height=button_height # Fixed height
+            width=350, 
+            height=button_height 
         ),
         Button(
             image=None,
@@ -492,21 +492,21 @@ def pattern_selection(selected_song):
             font_size=75,
             base_color=COLORS["WHITE"],
             hovering_color=COLORS["RED"],
-            width=350, # Fixed width
-            height=button_height # Fixed height
+            width=350, 
+            height=button_height 
         )
     ]
 
     # Back button
     back_button = Button(
         image=None,
-        pos=(SCREEN_WIDTH//2, button_y_start + 3 * (button_height + button_gap) + 50), # Position after difficulty buttons with extra space
+        pos=(SCREEN_WIDTH//2, button_y_start + 3 * (button_height + button_gap) + 50), 
         text_input="BACK",
         font_size=75,
         base_color=COLORS["WHITE"],
         hovering_color=COLORS["RED"],
-        width=350, # Fixed width
-        height=button_height # Fixed height
+        width=350, 
+        height=button_height 
     )
 
     while True:
@@ -559,10 +559,10 @@ def main_menu():
     """Main menu screen."""
     pygame.display.set_caption("Main Menu")
 
-    # Define fixed button height and gap
+    # Define button height and gap
     button_height = 90
     button_gap = 40
-    button_y_start = 420 # Adjusted starting position for fixed height
+    button_y_start = 420 # Starting position for fixed height
 
     # Load the background image
     background_image_path = os.path.join('graphics', 'BACKGROUND PICTURE FOR MP.png')
@@ -680,8 +680,7 @@ def coming_soon_panel():
     while True:
         mouse_pos = pygame.mouse.get_pos()
 
-        # Draw the previous screen's content (optional, for transition effect)
-        # Or just draw the overlay on a black screen
+        # draw the overlay on a black screen
         SCREEN.fill(COLORS["BLACK"])
         SCREEN.blit(overlay, (0, 0))
 

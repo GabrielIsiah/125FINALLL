@@ -101,7 +101,7 @@ class Game:
 
         # Load background video
         self.background_video = None
-        # video_path = self.song_info.get("video_file") # Reverted this line
+        
 
         # Reverted video path logic back to original
         if song_key == "song1":
@@ -113,7 +113,7 @@ class Game:
         else:
             video_path = None
 
-        # Get video start delay from song info or use default - Keep this line to use custom delay if present in song_info
+        # Get video start delay from song info or use default
         # Check if the custom delay exists in song_info, otherwise use the default constant
         if "VIDEO_START_DELAY" in self.song_info:
             self.video_start_delay = self.song_info["VIDEO_START_DELAY"]
@@ -319,12 +319,11 @@ class Game:
         mouse_pos = pygame.mouse.get_pos()
 
 
-        # Let's try placing the first button closer to the score
-        button_y_start = WINDOW_HEIGHT//2 - 20 # Adjusted starting position for buttons (moved upwards)
-        button_gap = 100 # Keep existing button gap
+        # Buttons of Results Popup
+        button_y_start = WINDOW_HEIGHT//2 - 20 # Buttons Pos
+        button_gap = 100 
         
         for i, btn in enumerate(self.results_buttons):
-            # Adjust button vertical position based on the new starting point and gap
             btn['rect'].center = (WINDOW_WIDTH//2, button_y_start + i * button_gap)
             btn['hover'] = btn['rect'].collidepoint(mouse_pos)
             color = (255,0,0) if btn['hover'] else (255,255,255)
